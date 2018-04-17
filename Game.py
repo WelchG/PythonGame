@@ -596,7 +596,6 @@ while not game.over:
     if hero.health <= 0:
         game.clearBackground()
         gameover.draw()
-        enter.draw()
         
     if boss.health <= 0:
         game.clearBackground()
