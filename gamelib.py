@@ -52,7 +52,7 @@ mouse = Mouse()
 joy = Joystick()
 
 class Font(object):
-    def __init__(self, color = black, size = 24, shadowColor = None, family = None):
+    def __init__(self, color = white, size = 24, shadowColor = None, family = None):
         self.color, self.size, self.shadowColor = color, size, shadowColor
 
         if family != None and family[-3:] == "ttf":
