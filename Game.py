@@ -28,6 +28,8 @@ layer5.resizeTo(800,600)
 layer6 = Image("Hills layer 06.png",game)
 layer6.resizeTo(800,600)
 
+text = Image("text.png",game)
+
 title = Image("Logo.png",game)
 title.y -= 200
 
@@ -123,6 +125,10 @@ while not game.over:
 
     if play.collidedWith(mouse) and mouse.LeftClick:
         game.over = True
+
+    game.drawText("Attack - A",10,530)
+    game.drawText("Defend - D",10,550)
+    game.drawText("Movement - Right and Left Arrow Keys",10,570)
  
     game.update(35)
 game.over = False
@@ -139,11 +145,7 @@ while not game.over:
     layer4.draw()
     layer5.draw()
 
-    game.drawText("You are a wandering swordsman looking for adventure and excitement. You are currently walking",10,80)
-    game.drawText("aimlessly through the grasslands. As you keep wallking you soon see the end of the desert",10,100)
-    game.drawText("and start see a forest full of life. As you approach the forest you see a sign on the ground",10,120)
-    game.drawText("and it has written on it DANGER with a skull and crossbones. You decide to keep",10,140)
-    game.drawText("going to seek whatever the forest hides in the name of adventure and excitement.",10,160)
+    text.moveTo(400,100)
 
     #Character
     left.draw()
@@ -410,9 +412,9 @@ while not game.over:
     if hero.isOffScreen("right"):
         game.over = True
 
-    game.drawText("Health: " + str(skele1.health),skele1.x,skele1.y - 100)#1
-    game.drawText("Health: " + str(skele3.health),skele3.x,skele3.y - 100)#2
-    game.drawText("Health: " + str(skele5.health),skele5.x,skele5.y - 100)#3
+    game.drawText("Health: " + str(skele1.health),skele1.x,skele1.y - 100,)#1
+    game.drawText("Health: " + str(skele3.health),skele3.x,skele3.y - 100,)#2
+    game.drawText("Health: " + str(skele5.health),skele5.x,skele5.y - 100,)#3
     game.drawText("Health: " + str(hero.health),hero.x,hero.y + 70)
     
     game.update(35)   
@@ -505,8 +507,6 @@ while not game.over:
     fireball.setSpeed(5,90)
     fireball.move()
 
-
-
     #Fireball
     if fireball.collidedWith(hero) or fireball.collidedWith(left) or fireball.collidedWith(attack) or fireball2.collidedWith(attack2):
         hero.health -= 2
@@ -571,4 +571,4 @@ while not game.over:
     game.drawText("Health: " + str(hero.health),hero.x,hero.y + 70)
     
     game.update(75)
-game.quit()    
+game.quit()     
